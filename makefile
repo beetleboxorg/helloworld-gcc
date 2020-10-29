@@ -1,20 +1,19 @@
-# This is the default target, which will be built when 
-# you invoke make
-.PHONY: all
-all: hello
+# the compiler to use
+CC      = g++
 
-# This rule tells make how to build hello from hello.cpp
-hello: hello.cpp
-    g++ -o hello hello.cpp
+# compiler flags:
+#  -g    adds debugging information to the executable file
+#  -Wall turns on most, but not all, compiler warnings
+CCFLAGS = -g -Wall
+RM      = rm -rf
 
-# This rule tells make to copy hello to the binaries subdirectory,
-# creating it if necessary
-.PHONY: install
-install:
-    mkdir -p binaries
-    cp -p hello binaries
+default: all
 
-# This rule tells make to delete hello and hello.o
-.PHONY: clean 
+all: main
+
+main: main.cpp
+	$(CC) $(CCFLAGS) -o main main.cpp
+	@echo "Build complete"
 clean:
-    rm -f hello
+	$(RM) *.dSYM *.out main
+	@echo "Clean complete"
