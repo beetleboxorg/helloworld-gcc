@@ -1,0 +1,21 @@
+name: C/C++ CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Hello World'
+        required: false
+        default: 'Run'
+
+jobs:
+  helloworld:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make
+    - name: launch
+      run: ./main
