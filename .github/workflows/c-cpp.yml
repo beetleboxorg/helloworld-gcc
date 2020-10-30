@@ -10,7 +10,6 @@ on:
         
 jobs:
   helloworld:
-
     runs-on: self-hosted
 
     steps:
@@ -19,3 +18,4 @@ jobs:
       run: make
     - name: launch
       run: ./main
+      
