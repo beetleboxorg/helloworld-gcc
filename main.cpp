@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {   
-    cout << "Hello World from git deployment!" << endl;
+    cout << "Hello World!" << endl;
     return 0;
     
 //test
