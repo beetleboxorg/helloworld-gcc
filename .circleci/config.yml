@@ -11,6 +11,7 @@ jobs:
       - run: | 
           make
           ./main
+      - run: ./main
       
 # Orchestrate our job run sequence
 workflows:
