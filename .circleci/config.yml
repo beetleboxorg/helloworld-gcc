@@ -8,8 +8,9 @@ jobs:
       - checkout
       - run: echo "this is the build job"
       - run: echo $SSH_CONFIG_DIR      
-      - run: make
-      - run: ./main
+      - run: | 
+          make
+          ./main
       
 # Orchestrate our job run sequence
 workflows:
